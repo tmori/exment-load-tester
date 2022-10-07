@@ -5,8 +5,7 @@ export EXMENT_CLIENT_SECRET=
 export EXMENT_APK_KEY=
 
 export EXMENT_PHP_TOPDIR=/root/workspace
-export EXMENT_PHP_TESTDIR=
-export EXMENT_RS_TOPDIR=
+export EXMENT_RS_TOPDIR=/root/workspace/load-test
 
 export WEB_SERVER_URL=192.168.11.52
 export TOP_DIR=`pwd`
@@ -21,7 +20,7 @@ export TEST_RESULTPATH=${EXMENT_RS_TOPDIR}/test-result/${TEST_TARGET}
 
 # Options
 export TEST_SAR_ENABLE=TRUE
-export TEST_TARGET_TOOL_DIR=
+export TEST_TARGET_TOOL_DIR=/mnt/project/work/exment/exment-load-tester/web-server-load-tester
 export TEST_SSH_ACCOUNT=tmori@192.168.11.52
 export TEST_DISK_DEV=/dev/sdb5
 
@@ -44,7 +43,7 @@ export MYSQL_DB_DATA_DIR=/var/lib/mysql
 # ssh-copy-id -i ~/.ssh/id_rsa.pub <username>@<host ipaddr>
 
 # TOOL OPTIONS
-export EXMENT_TOOL_DIR=
+export EXMENT_TOOL_DIR=/mnt/project/work/exment/exment-load-tester
 export EXMENT_ROOT_USER=root
 export EXMENT_ROOT_PASSWD=Password-999
 
