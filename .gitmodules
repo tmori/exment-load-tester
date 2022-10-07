@@ -1,0 +1,6 @@
+[submodule "php-exment-driver"]
+	path = php-exment-driver
+	url = git@github.com:tmori/php-exment-driver.git
+[submodule "web-server-load-tester"]
+	path = web-server-load-tester
+	url = git@github.com:tmori/web-server-load-tester.git
