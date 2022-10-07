@@ -1,0 +1,25 @@
+version: "3"
+services:
+
+  exment_php:
+    restart: always
+    container_name: "exment_php"
+    build: ./php-exment-driver/php
+    tty: true
+    environment:
+      - EXMENT_URL=192.168.11.52
+    networks:
+      exment_base_network:
+        ipv4_address: 192.168.14.13
+    working_dir: /root/workspace
+    volumes:
+      - ./php-exment-driver/php/driver/:/root/workspace
+      - ./web-server-load-tester:/root/workspace/web-server-load-tester
+
+networks:
+  exment_base_network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.14.0/24
