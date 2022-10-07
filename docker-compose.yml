@@ -15,6 +15,7 @@ services:
     volumes:
       - ./php-exment-driver/php/driver/:/root/workspace
       - ./web-server-load-tester:/root/workspace/web-server-load-tester
+      - ./load-test:/root/workspace/load-test
 
 networks:
   exment_base_network:
