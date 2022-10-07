@@ -47,5 +47,6 @@ export EXMENT_TOOL_DIR=/mnt/project/work/exment/exment-load-tester
 export EXMENT_ROOT_USER=root
 export EXMENT_ROOT_PASSWD=Password-999
 
-export EXMENT_DB_BKP_TOOL_DIR=
-export EXMENT_DB_BKP_DIR=
+export EXMENT_DB_BKP_TOOL_DIR=${EXMENT_TOOL_DIR}/load-test/tools
+export EXMENT_DB_BKP_DIR=/var/www/exment/storage/app/backup/list
+export EXMENT_PHP_DIR=/var/www/exment

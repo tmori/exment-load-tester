@@ -22,5 +22,5 @@ then
 fi
 
 cd ${EXMENT_PHP_DIR}
-su www-data -c "php artisan exment:restore ${BACKUP_FILE}"
+su www-data -c "yes | php artisan exment:restore ${BACKUP_FILE}"
 
