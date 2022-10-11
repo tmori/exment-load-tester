@@ -18,5 +18,5 @@ source ${TEST_LOGGER}
 tlog "SETUP RESTORE... : backup-file=${BACKUP_FILE}"
 bash test-utils/remote_script.bash \
     ${EXMENT_DB_BKP_TOOL_DIR}/exment_restore.bash \
-    ${MATTERMOST_DB_BKP_DIR}/${BACKUP_FILE} \
+    ${BACKUP_FILE} \
     ${TEST_TARGET_TOOL_DIR}
