@@ -1,0 +1,8 @@
+No,Multiplicity,SetUp,TearDown,Prepare,Do,Done,DoRepeatNum
+1,1,restore(user800withTestData.zip),nop,nop,create,nop,10
+2,10,restore(user800withTestData.zip),nop,nop,create,nop,10
+3,20,restore(user800withTestData.zip),nop,nop,create,nop,10
+4,40,restore(user800withTestData.zip),nop,nop,create,nop,10
+5,80,restore(user800withTestData.zip),nop,nop,create,nop,10
+6,160,restore(user800withTestData.zip),nop,nop,create,nop,10
+7,200,restore(user800withTestData.zip),nop,nop,create,nop,10
