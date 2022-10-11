@@ -1,0 +1,3 @@
+"id","suuid","parent_id","parent_type","value.user_code","value.user_name","value.email","created_at","updated_at","deleted_at"
+"ID","内部ID(20桁)","親データのID","親データのテーブル名","ユーザーコード","ユーザー名","メールアドレス","作成日時","更新日時","削除日時"
+"1","48d84741fa9dfcc5c920","","","root","root","root@example.com","2022-10-11 09:01:51","2022-10-11 09:01:51",""

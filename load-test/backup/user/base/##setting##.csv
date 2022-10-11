@@ -1,0 +1,3 @@
+"table_name","column_name","target_column_name"
+"テーブル名(英数字)","列名(英数字)","置換対象列名(英数字)"
+"user","parent_id",""

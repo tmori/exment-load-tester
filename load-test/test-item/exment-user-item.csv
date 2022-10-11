@@ -1,0 +1,7 @@
+No,Multiplicity,SetUp,TearDown,Prepare,Do,Done,DoRepeatNum
+1,1,restore(initialdata.zip),nop,nop,restore(user10.zip),nop,1
+2,1,restore(initialdata.zip),nop,nop,restore(user50.zip),nop,1
+3,1,restore(initialdata.zip),nop,nop,restore(user100.zip),nop,1
+4,1,restore(initialdata.zip),nop,nop,restore(user200.zip),nop,1
+5,1,restore(initialdata.zip),nop,nop,restore(user400.zip),nop,1
+6,1,restore(initialdata.zip),nop,nop,restore(user800.zip),nop,1
