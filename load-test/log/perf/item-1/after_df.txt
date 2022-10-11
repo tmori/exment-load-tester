@@ -1,2 +1,2 @@
 Filesystem     1K-blocks     Used Available Use% Mounted on
-/dev/sdb5       77059828 49029640  24070024  68% /
+/dev/sdb5       77059828 48877960  24221704  67% /
