@@ -1,0 +1,8 @@
+No,Multiplicity,SetUp,TearDown,Prepare,Do,Done,DoRepeatNum
+1,1,restore(user800with10000Records.zip),nop,nop,update,nop,50
+2,10,restore(user800with10000Records.zip),nop,nop,update,nop,50
+3,20,restore(user800with10000Records.zip),nop,nop,update,nop,50
+4,40,restore(user800with10000Records.zip),nop,nop,update,nop,50
+5,80,restore(user800with10000Records.zip),nop,nop,update,nop,50
+6,160,restore(user800with10000Records.zip),nop,nop,update,nop,50
+7,200,restore(user800with10000Records.zip),nop,nop,update,nop,50
