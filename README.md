@@ -82,18 +82,24 @@ https://github.com/tmori/exment-load-tester/blob/main/load-test/test-result/exme
 * Laravel のAPIリクエスト制限数の変更
  * 参考：[Laravel8で429エラーが出たときの対処法](https://zenn.dev/naoki_oshiumi/articles/e7a1e97ba858b4)
  * 本テストでは、`perHour(50000)`としました。
+* Nginxのタイムアウト設定の変更
+  * 多重度を上げると応答が極端に遅くなり、Nginxがタイムアウトエラーを返す場合があります。
+  * 本テストでは、応答時間を確認したいため、タイムアウトにならないように設定変更する必要があります。
+  * 本テストでの変更内容は以下としました。環境に応じて適宜パラメータを調整してください。
+    * 修正対象ファイル: /etc/nginx/conf.d/exment.conf
+    * パラメータ： fastcgi_read_timeout 600  * 
 * MySQL の UNOD ログレコードサイズがページサイズを超える場合の対応
   * 参考：[§ InnoDB ストレージエンジン : InnoDB テーブルへの UPDATE ステートメントがハングする可能性があった。](https://openstandia.jp/oss_info/mysql/html/MySQL_5.5.18.html)
   * 本テストでは、MySQLのページサイズを 32KB としました。
     * ページサイズのパラメータ：innodb_page_size=32K
   * 注意：ページサイズの変更は、MySQLインストール(mysql_secure_installation)後に行うと、MySQLが起動しなくなります。
   * 注意：インストールしてしまった場合は、以下の手順で対応できます。
-  * 1. 必要なデータをバックアップ
-  * 2. [mysql を初期化](https://blog.turai.work/entry/20161011/1476170075)する。
-  * 3. Mysqlを再インストール(mysql_secure_installation)する。
-  * 4. [データベースをセットアップする](https://qiita.com/kanetugu2018/items/8192cc3461ef60b2f876#%E3%83%87%E3%83%BC%E3%82%BF%E3%83%BC%E3%83%99%E3%83%BC%E3%82%B9%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97)。
-  * 5. [初期データをインストールする](https://exment.net/docs/#/ja/quickstart_easy?id=%E5%88%9D%E6%9C%9F%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB)
-  * 6. バックアップデータをリストアする
+    * 1. 必要なデータをバックアップ
+    * 2. [mysql を初期化](https://blog.turai.work/entry/20161011/1476170075)する。
+    * 3. Mysqlを再インストール(mysql_secure_installation)する。
+    * 4. [データベースをセットアップする](https://qiita.com/kanetugu2018/items/8192cc3461ef60b2f876#%E3%83%87%E3%83%BC%E3%82%BF%E3%83%BC%E3%83%99%E3%83%BC%E3%82%B9%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97)。
+    * 5. [初期データをインストールする](https://exment.net/docs/#/ja/quickstart_easy?id=%E5%88%9D%E6%9C%9F%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB)
+    * 6. バックアップデータをリストアする
 
 # インストール手順
 
