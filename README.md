@@ -42,5 +42,33 @@ https://github.com/tmori/exment-load-tester/blob/main/load-test/test-item/exment
 
 https://github.com/tmori/exment-load-tester/blob/main/load-test/test-item/exment-query-item.csv
 
+# テスト結果
+
+テスト結果はこちらに自動的に格納されます。
+
+https://github.com/tmori/exment-load-tester/tree/main/load-test/test-result/exment
+
+なお、格納されているデータは、以下の環境で測定したものです。
+
+* CPU: 8コア
+* メモリ：16GB
+* ディスク：15GB
+
+## カスタムデータ新規作成
+
+https://github.com/tmori/exment-load-tester/blob/main/load-test/test-result/exment/exment-create-item-result.csv
+
+## カスタムデータ情報更新
+
+https://github.com/tmori/exment-load-tester/blob/main/load-test/test-result/exment/exment-update-item-result.csv
+
+## カスタムデータ情報取得
+
+https://github.com/tmori/exment-load-tester/blob/main/load-test/test-result/exment/exment-view-item-result.csv
+
+## カスタムデータ検索
+
+https://github.com/tmori/exment-load-tester/blob/main/load-test/test-result/exment/exment-query-item-result.csv
+
 
 
