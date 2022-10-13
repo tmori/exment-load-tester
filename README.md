@@ -71,4 +71,35 @@ https://github.com/tmori/exment-load-tester/blob/main/load-test/test-result/exme
 https://github.com/tmori/exment-load-tester/blob/main/load-test/test-result/exment/exment-query-item-result.csv
 
 
+# 前提とする環境
 
+- Exment がインストールされていること
+  - [ExmentをUbuntu20.0.4 サーバにインストールする手順](https://qiita.com/kanetugu2018/items/8192cc3461ef60b2f876)
+- Linux環境で docker-compose が利用できる環境であること(Windows WSLは対象外)
+
+
+# インストール手順
+
+docker-compose.yml の [EXMENT_URL](https://github.com/tmori/exment-load-tester/blob/main/docker-compose.yml#L10) を適切なものに変更してください。
+
+
+```
+docker-compose build
+```
+
+```
+docker-compose up -d
+```
+
+```
+docker-compose exec exment_php /bin/bash
+```
+
+```
+bash install.bash
+```
+
+テスト自動化していますので、パスワードなしで ssh で Exmentサーバーマシンにログインできる必要があります。
+以下の記事が参考になります。
+
+https://blog.apar.jp/linux/5336/
