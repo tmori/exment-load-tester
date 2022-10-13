@@ -77,6 +77,23 @@ https://github.com/tmori/exment-load-tester/blob/main/load-test/test-result/exme
   - [ExmentをUbuntu20.0.4 サーバにインストールする手順](https://qiita.com/kanetugu2018/items/8192cc3461ef60b2f876)
 - Linux環境で docker-compose が利用できる環境であること(Windows WSLは対象外)
 
+上記の環境構築前に、本負荷テスト実施時にいくつか各種設定調整が必要となりますので、以下の対応が必要となりますので、ご注意ください。
+
+* Laravel のAPIリクエスト制限数の変更
+ * 参考：[Laravel8で429エラーが出たときの対処法](https://zenn.dev/naoki_oshiumi/articles/e7a1e97ba858b4)
+ * 本テストでは、`perHour(50000)`としました。
+* MySQL の UNOD ログレコードサイズがページサイズを超える場合の対応
+  * 参考：[§ InnoDB ストレージエンジン : InnoDB テーブルへの UPDATE ステートメントがハングする可能性があった。](https://openstandia.jp/oss_info/mysql/html/MySQL_5.5.18.html)
+  * 本テストでは、MySQLのページサイズを 32KB としました。
+    * ページサイズのパラメータ：innodb_page_size=32K
+  * 注意：ページサイズの変更は、MySQLインストール(mysql_secure_installation)後に行うと、MySQLが起動しなくなります。
+  * 注意：インストールしてしまった場合は、以下の手順で対応できます。
+  * 1. 必要なデータをバックアップ
+  * 2. [mysql を初期化](https://blog.turai.work/entry/20161011/1476170075)する。
+  * 3. Mysqlを再インストール(mysql_secure_installation)する。
+  * 4. [データベースをセットアップする](https://qiita.com/kanetugu2018/items/8192cc3461ef60b2f876#%E3%83%87%E3%83%BC%E3%82%BF%E3%83%BC%E3%83%99%E3%83%BC%E3%82%B9%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97)。
+  * 5. [初期データをインストールする](https://exment.net/docs/#/ja/quickstart_easy?id=%E5%88%9D%E6%9C%9F%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB)
+  * 6. バックアップデータをリストアする
 
 # インストール手順
 
