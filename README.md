@@ -161,3 +161,44 @@ sudo passwd www-data
 * EXMENT_TOOL_DIR
   * Exment サーバー側の 本ツールリポジトリのトップディレクトリパスです。
 
+
+# テスト実行方法
+
+docker コンテナに入り、以下のディレクトリに移動します。
+
+★注意：ssh の設定は、コンテナからログアウトすると消えてしまいますので、毎回、実施しないといけないです。。
+
+```
+cd /root/workspace/web-server-load-tester
+```
+
+## カスタムデータ新規作成のテストを実行する場合
+
+```
+bash test-runtime/test-controller.bash ../load-test/test-item/exment-create-item.csv
+```
+
+## カスタムデータ情報更新のテストを実行する場合
+
+```
+bash test-runtime/test-controller.bash ../load-test/test-item/exment-update-item.csv
+```
+
+## カスタムデータ情報取得のテストを実行する場合
+
+```
+bash test-runtime/test-controller.bash ../load-test/test-item/exment-view-item.csv
+```
+
+## カスタムデータ検索のテストを実行する場合
+
+```
+bash test-runtime/test-controller.bash ../load-test/test-item/exment-query-item.csv
+```
+
+
+# 終了方法
+
+```
+docker-compose down
+```
