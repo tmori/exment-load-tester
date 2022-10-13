@@ -105,6 +105,8 @@ bash install.bash
   * 以下の記事が参考になります。
   * https://blog.apar.jp/linux/5336/
 * www-data ユーザにパスワードなしで su できること（手順は後述）
+* [Exment の API 設定を有効化する](https://exment.net/docs/#/ja/api)
+  * 本テストでは、API Key(APIキー形式)を使用します。
 
 ## www-data ユーザにパスワードなしで su するための設定
 
@@ -135,3 +137,5 @@ www-data:x:33:33:www-data:/var/www:/bin/bash
 ```
 sudo passwd www-data
 ```
+
+
