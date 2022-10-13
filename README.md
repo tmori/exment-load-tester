@@ -108,7 +108,7 @@ bash install.bash
 
 ## www-data ユーザにパスワードなしで su するための設定
 
-1. su 権限設定を追加する。
+### 1. su 権限設定を追加する。
 
 ```
 	sudo vi /etc/pam.d/su 
@@ -121,7 +121,7 @@ bash install.bash
 +	auth       sufficient   pam_succeed_if.so use_uid user ingroup www-data
 ```
 
-2. /etc/passwdの編集
+### 2. /etc/passwdの編集
 
 www-data の `/usr/sbin/nologin` を `/bin/bash` に変更する
 
@@ -130,7 +130,7 @@ www-data の `/usr/sbin/nologin` を `/bin/bash` に変更する
 www-data:x:33:33:www-data:/var/www:/bin/bash
 ````
 
-3. www-dataのパスワード設定する
+### 3. www-dataのパスワード設定する
 
 ```
 sudo passwd www-data
