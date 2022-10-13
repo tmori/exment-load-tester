@@ -99,7 +99,39 @@ docker-compose exec exment_php /bin/bash
 bash install.bash
 ```
 
-テスト自動化していますので、パスワードなしで ssh で Exmentサーバーマシンにログインできる必要があります。
-以下の記事が参考になります。
+テスト自動化していますので、以下の対応が必要となります。
 
-https://blog.apar.jp/linux/5336/
+* パスワードなしで ssh で Exmentサーバーマシンにログインできること。
+  * 以下の記事が参考になります。
+  * https://blog.apar.jp/linux/5336/
+* www-data ユーザにパスワードなしで su できること（手順は後述）
+
+## www-data ユーザにパスワードなしで su するための設定
+
+1. su 権限設定を追加する。
+
+```
+	sudo vi /etc/pam.d/su 
+	
+	# This allows root to su without passwords (normal operation)
+	#auth       sufficient pam_rootok.so
+	auth       [success=ignore default=1] pam_succeed_if.so user = mattermost
+	auth       sufficient   pam_succeed_if.so use_uid user ingroup mattermost
++	auth       [success=ignore default=1] pam_succeed_if.so user = www-data
++	auth       sufficient   pam_succeed_if.so use_uid user ingroup www-data
+```
+
+2. /etc/passwdの編集
+
+www-data の `/usr/sbin/nologin` を `/bin/bash` に変更する
+
+例：
+```
+www-data:x:33:33:www-data:/var/www:/bin/bash
+````
+
+3. www-dataのパスワード設定する
+
+```
+sudo passwd www-data
+```
