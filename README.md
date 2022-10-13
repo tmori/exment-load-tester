@@ -138,4 +138,67 @@ www-data:x:33:33:www-data:/var/www:/bin/bash
 sudo passwd www-data
 ```
 
+# 環境変数の設定
 
+本ツールを実行するには以下の環境変数設定ファイル(env.bash)を編集する必要があります。
+
+* ./web-server-load-tester/env/env.bash
+
+ただし、上記の環境変数は一般向けのパラメータセットとなっているため、Exment負荷テスト用の環境変数を追加する必要があります。
+ベースとなる設定ファイルは、[env_loadtest.bash](https://github.com/tmori/exment-load-tester/blob/main/load-test/env/env_loadtest.bash)があるので、その内容を上書きすることで必要な環境変数を追加することができます。
+
+各環境変数設定内容として変更ポイントは以下の通りです。
+ここで記載されていないものは、[web-server-load-tester](https://github.com/tmori/web-server-load-tester) のREADMEを参照ください。
+
+* EXMENT_CLIENT_ID
+  * Exment の API 設定で作成されたクライアントIDを設定します。
+* EXMENT_CLIENT_SECRET
+  * Exment の API 設定で作成されたクライアントシークレットを設定します。
+* EXMENT_APK_KEY
+  * Exment の API 設定で作成されたAPIキーを設定します。
+* TEST_TARGET_TOOL_DIR
+  * Exment サーバー側の web-server-load-tester のディレクトリパスです。
+* EXMENT_TOOL_DIR
+  * Exment サーバー側の 本ツールリポジトリのトップディレクトリパスです。
+
+
+# テスト実行方法
+
+docker コンテナに入り、以下のディレクトリに移動します。
+
+★注意：ssh の設定は、コンテナからログアウトすると消えてしまいますので、毎回、実施しないといけないです。。
+
+```
+cd /root/workspace/web-server-load-tester
+```
+
+## カスタムデータ新規作成のテストを実行する場合
+
+```
+bash test-runtime/test-controller.bash ../load-test/test-item/exment-create-item.csv
+```
+
+## カスタムデータ情報更新のテストを実行する場合
+
+```
+bash test-runtime/test-controller.bash ../load-test/test-item/exment-update-item.csv
+```
+
+## カスタムデータ情報取得のテストを実行する場合
+
+```
+bash test-runtime/test-controller.bash ../load-test/test-item/exment-view-item.csv
+```
+
+## カスタムデータ検索のテストを実行する場合
+
+```
+bash test-runtime/test-controller.bash ../load-test/test-item/exment-query-item.csv
+```
+
+
+# 終了方法
+
+```
+docker-compose down
+```
